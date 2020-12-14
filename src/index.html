@@ -7,10 +7,26 @@
     <title>Corebiz</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <img src="assets/corebiz-logo.png" alt="" />
-      </header>
-    </div>
+    <header class="header">
+      <img class="header__logo" src="assets/corebiz-logo.png" alt="" />
+
+      <div class="header__search-bar">
+        <input
+          placeholder="O que está procurando?"
+          type="text"
+          class="header__search-bar__input"
+          name="search"
+          id="search-bar"
+        />
+      </div>
+
+      <div class="header__links">
+        <a class="header__links__account item-link" href="#">Minha Conta</a>
+        <a class="header__links__cart" href="#"></a>
+        <span class="header__links__cart--counter js-cart-counter">1</span>
+      </div>
+    </header>
+
+    <main class="container"></main>
   </body>
 </html>
