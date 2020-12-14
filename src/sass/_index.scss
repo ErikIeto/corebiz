@@ -45,7 +45,7 @@
 
   .shelf {
     margin-top: 25px;
-    
+
     &__title {
       max-width: $max-width;
       padding: 0 44px;
@@ -53,6 +53,18 @@
       font-size: 20px;
       line-height: 27px;
       color: $color-black;
+      position: relative;
+      height: 34px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 44px;
+        bottom: 0px;
+        width: 65px;
+        height: 4px;
+        background-color: $color-gray-6;
+      }
     }
   }
 
