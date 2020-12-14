@@ -8,9 +8,29 @@
   </head>
   <body>
     <header class="header">
-      <img class="header__logo" src="assets/corebiz-logo.png" alt="" />
+      <div class="header__wrapper">
+        <button class="header__menu header--mobile"></button>
+        <a href="/"
+          ><img class="header__logo" src="assets/corebiz-logo.svg" alt=""
+        /></a>
 
-      <div class="header__search-bar">
+        <div class="header__search-bar">
+          <input
+            placeholder="O que está procurando?"
+            type="text"
+            class="header__search-bar__input"
+            name="search"
+            id="search-bar"
+          />
+        </div>
+
+        <div class="header__links">
+          <a class="header__links__account" href="#">Minha Conta</a>
+          <a class="header__links__cart" href="#"></a>
+          <span class="header__links__cart--counter js-cart-counter">1</span>
+        </div>
+      </div>
+      <div class="header__search-bar header__search-bar--mobile">
         <input
           placeholder="O que está procurando?"
           type="text"
@@ -18,12 +38,6 @@
           name="search"
           id="search-bar"
         />
-      </div>
-
-      <div class="header__links">
-        <a class="header__links__account item-link" href="#">Minha Conta</a>
-        <a class="header__links__cart" href="#"></a>
-        <span class="header__links__cart--counter js-cart-counter">1</span>
       </div>
     </header>
 
