@@ -1,7 +1,14 @@
 @charset "UTF-8";
 
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Nunito:wght@400;600;700;900&display=swap");
+
 // helpers
-@import "helpers/variables", "helpers/mixins", "helpers/media-queries";
+@import "helpers/variables", "helpers/mixins", "helpers/media-queries",
+  "helpers/helpers";
+
+// vendors
+@import "vendors/reset";
 
 // components
 
