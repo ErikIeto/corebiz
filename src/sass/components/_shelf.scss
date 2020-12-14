@@ -65,11 +65,40 @@
   &__info {
     text-align: center;
     margin-top: 7px;
+    height: 53px;
   }
 
   &__price {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    margin: 0;
+
+    &--list {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      text-decoration-line: line-through;
+      color: $color-gray-4;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    &--best {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 25px;
+      color: $color-black;
+      margin: 2px 0 4px 0;
+    }
+
+    &--installments {
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 15px;
+      color: $color-gray-4;
+      height: 12px;
+    }
   }
 
   &__name {
@@ -80,10 +109,10 @@
   }
 
   &__stars {
-    i {
-      display: inline-block;
-    }
-    
+    display: flex;
+    justify-content: center;
+    margin: 7px 0;
+
     &--star {
       background-image: url("../assets/star.svg");
       width: 12px;

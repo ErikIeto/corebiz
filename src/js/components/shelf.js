@@ -23,19 +23,19 @@ export default class Shelf {
    * Get rating stars product card HTML
    */
   getStarsHTML(starsCount) {
-    let html = '<div class="productCard__stars">';
+    let html = '<ul class="productCard__stars">';
 
     for (let starIndex = 1; starIndex <= starsCount; starIndex++) {
-      html += `<i class="productCard__stars--star-filled"></i>`;
+      html += `<li class="productCard__stars--star-filled"></li>`;
     }
 
     if (starsCount < 5) {
       for (let starIndex = starsCount; starIndex < 5; starIndex++) {
-        html += `<i class="productCard__stars--star"></i>`;
+        html += `<li class="productCard__stars--star"></li>`;
       }
     }
 
-    html += "</div>";
+    html += "</ul>";
     return html;
   }
 
@@ -68,20 +68,19 @@ export default class Shelf {
                         ${product.productName}
                     </h3>
                     ${starsHTML}
-                    <div class="productCard__price">
-                       <span class="productCard__price--list">${
-                         hasListPrice ? `de ${product.listPrice}` : ""
-                       } 
-                       </span>
-                        <span class="productCard__price--best">por ${
-                          product.price
-                        }</span>
-                        <span class="productCard__price--installments">${
-                          hasInstallments
-                            ? `ou em ${product.installments[0].quantity}x de ${product.installments[0].value}`
-                            : ""
-                        }</span>
-                    </div>
+                    <span class="productCard__price--list">${
+                      hasListPrice ? `de ${product.listPrice}` : ""
+                    } 
+                </div>
+                <div class="productCard__price">
+                    <span class="productCard__price--best">por ${
+                      product.price
+                    }</span>
+                    <span class="productCard__price--installments">${
+                      hasInstallments
+                        ? `ou em ${product.installments[0].quantity}x de ${product.installments[0].value}`
+                        : ""
+                    }</span>
                 </div>
                 <div class="productCard__buyBox">
                     <button class="productCard__buyBox--btn">Comprar</button>
