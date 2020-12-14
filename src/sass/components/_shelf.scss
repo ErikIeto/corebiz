@@ -14,6 +14,7 @@
 
   .slick-prev {
     position: absolute;
+    z-index: map-get($z-index, shelf-arrows);
     font-size: 0;
     background-color: transparent;
     background: url("../assets/left-arrow.svg");
@@ -29,6 +30,7 @@
 
   .slick-next {
     position: absolute;
+    z-index: map-get($z-index, shelf-arrows);
     font-size: 0;
     background-color: transparent;
     background: url("../assets/left-arrow.svg");
