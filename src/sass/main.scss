@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-*,
-h1 {
-  font-size: 15px;
-}
+// helpers
+@import "helpers/variables", "helpers/mixins", "helpers/media-queries";
 
-body {
-}
+// components
+
+// page
+@import "index";
