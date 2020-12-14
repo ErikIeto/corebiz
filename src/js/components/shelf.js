@@ -20,6 +20,26 @@ export default class Shelf {
   }
 
   /**
+   * Get rating stars product card HTML
+   */
+  getStarsHTML(starsCount) {
+    let html = '<div class="productCard__stars">';
+
+    for (let starIndex = 1; starIndex <= starsCount; starIndex++) {
+      html += `<i class="productCard__stars--star-filled"></i>`;
+    }
+
+    if (starsCount < 5) {
+      for (let starIndex = starsCount; starIndex < 5; starIndex++) {
+        html += `<i class="productCard__stars--star"></i>`;
+      }
+    }
+
+    html += "</div>";
+    return html;
+  }
+
+  /**
    * Render product cards
    */
   render(products) {
@@ -28,7 +48,8 @@ export default class Shelf {
     products.forEach((product) => {
       const hasListPrice = product.listPrice !== null;
       const hasInstallments = product.installments.length > 0;
-
+      const starsHTML = this.getStarsHTML(product.stars);
+      console.log(starsHTML);
       shelfElement.append(
         `
             <article class="productCard" data-product-id="${product.productId}">
@@ -46,20 +67,20 @@ export default class Shelf {
                     <h3 class="productCard__name">
                         ${product.productName}
                     </h3>
+                    ${starsHTML}
                     <div class="productCard__price">
-                        ${
-                          hasListPrice
-                            ? `<span class="productCard__price--list">de ${product.listPrice}</span>`
-                            : ""
-                        }
+                       <span class="productCard__price--list">${
+                         hasListPrice ? `de ${product.listPrice}` : ""
+                       } 
+                       </span>
                         <span class="productCard__price--best">por ${
                           product.price
                         }</span>
-                        ${
+                        <span class="productCard__price--installments">${
                           hasInstallments
-                            ? `<span class="productCard__price--installments">ou em ${product.installments[0].quantity}x de ${product.installments[0].value}`
+                            ? `ou em ${product.installments[0].quantity}x de ${product.installments[0].value}`
                             : ""
-                        }
+                        }</span>
                     </div>
                 </div>
                 <div class="productCard__buyBox">

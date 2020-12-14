@@ -5,11 +5,11 @@
   position: relative;
 
   .slick-list {
-      margin: 0 -49.5px;
+    margin: 0 -49.5px;
   }
   .slick-slide {
-      max-width: 216px;
-      margin: 0 49.5px;
+    max-width: 216px;
+    margin: 0 49.5px;
   }
 
   .slick-prev {
@@ -51,7 +51,7 @@
   box-sizing: border-box;
 
   &__image {
-      margin: 0 auto;
+    margin: 0 auto;
   }
 
   &__flags {
@@ -77,6 +77,24 @@
     font-size: 12px;
     line-height: 16px;
     color: $color-gray-4;
+  }
+
+  &__stars {
+    i {
+      display: inline-block;
+    }
+    
+    &--star {
+      background-image: url("../assets/star.svg");
+      width: 12px;
+      height: 11px;
+    }
+
+    &--star-filled {
+      background-image: url("../assets/star-filled.svg");
+      width: 12px;
+      height: 11px;
+    }
   }
 
   &__buyBox {
