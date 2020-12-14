@@ -43,6 +43,19 @@
     }
   }
 
+  .shelf {
+    margin-top: 25px;
+    
+    &__title {
+      max-width: $max-width;
+      padding: 0 44px;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 27px;
+      color: $color-black;
+    }
+  }
+
   @include max-mobile {
     &__main-banners {
       display: none;
@@ -50,7 +63,7 @@
       &--mobile {
         display: block;
       }
-      
+
       .slick-dots {
         button {
           width: 7px;

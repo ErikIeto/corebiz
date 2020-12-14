@@ -1,6 +1,11 @@
+// Dependencies
 import "./../sass/main.scss";
 import $ from "jquery";
 import slick from "slick-carousel";
+
+// Components
+import Shelf from "./components/shelf";
+
 /**
  * Home page class
  */
@@ -10,6 +15,7 @@ class Home {
    */
   constructor() {
     this.pageLoad();
+    this.productsShelf = new Shelf();
   }
 
   /**
@@ -32,6 +38,7 @@ class Home {
   pageLoad() {
     document.addEventListener("DOMContentLoaded", () => {
       this.initSliders();
+      this.productsShelf.load();
     });
   }
 }
