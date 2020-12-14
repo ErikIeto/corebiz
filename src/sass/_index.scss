@@ -1,5 +1,36 @@
 /* Index page styles */
 
-h1 {
-  font-size: 12px;
+.page {
+  &__main-banners {
+    .slick-list {
+      max-height: 430px;
+    }
+
+    .slick-dots {
+      position: absolute;
+      display: flex;
+      bottom: 37px;
+      width: 100%;
+      justify-content: center;
+
+      li:not(:last-child) {
+        margin-right: 12px;
+      }
+
+      button {
+        border: none;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        background-color: $color-gray-5;
+        font-size: 0;
+        display: block;
+      }
+
+      .slick-active button {
+        background-color: $color-highlight;
+      }
+    }
+  }
 }
