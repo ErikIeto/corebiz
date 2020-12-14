@@ -1,5 +1,6 @@
 import $ from "jquery";
 import API_URL from "../config/api";
+import formatPrice from "../utils/helper";
 
 /**
  * Shelf component class
@@ -69,16 +70,22 @@ export default class Shelf {
                     </h3>
                     ${starsHTML}
                     <span class="productCard__price--list">${
-                      hasListPrice ? `de ${product.listPrice}` : ""
+                      hasListPrice
+                        ? `de R$ ${formatPrice(product.listPrice)}`
+                        : ""
                     } 
                 </div>
                 <div class="productCard__price">
-                    <span class="productCard__price--best">por ${
+                    <span class="productCard__price--best">por R$ ${formatPrice(
                       product.price
-                    }</span>
+                    )}</span>
                     <span class="productCard__price--installments">${
                       hasInstallments
-                        ? `ou em ${product.installments[0].quantity}x de ${product.installments[0].value}`
+                        ? `ou em ${
+                            product.installments[0].quantity
+                          }x de R$ ${formatPrice(
+                            product.installments[0].value
+                          )}`
                         : ""
                     }</span>
                 </div>
