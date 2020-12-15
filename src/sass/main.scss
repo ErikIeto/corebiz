@@ -8,10 +8,10 @@
   "helpers/helpers";
 
 // vendors
-@import "vendors/reset";
+@import "vendors/reset", "vendors/slick";
 
 // components
-@import "components/header";
+@import "components/header", "components/shelf";
 
 // page
 @import "index";
