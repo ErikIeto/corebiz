@@ -136,6 +136,14 @@
       margin: 0 9px;
     }
 
+    &__success {
+      .success {
+        &__button {
+          width: 100%;
+        }
+      }
+    }
+
     &__form {
       flex-direction: column;
 
