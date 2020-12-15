@@ -93,7 +93,42 @@
       <section class="shelf container">
         <h2 class="shelf__title">Mais Vendidos</h2>
         <div class="products-shelf js-products-shelf"></div>
-      </div>
+      </section>
+
+      <section class="newsletter js-newsletter-section">
+        <div class="container js-newsletter-section--form">
+          <h2 class="newsletter__title">
+            Participe de nossas news com promoções e novidades!
+          </h2>
+
+          <form class="newsletter__form js-newsletter-form" method="POST">
+            <fieldset>
+              <input
+                class="form__input"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Digite seu nome"
+                required
+              />
+              <span class="error-message">Preencha seu nome completo</span>
+            </fieldset>
+            <fieldset>
+              <input
+                class="form__input"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Digite seu email"
+                required
+              />
+              <span class="error-message">Preencha com um e-mail válido</span>
+            </fieldset>
+            
+            <button class="form__submit">Eu quero!</button>
+          </form>
+        </div>
+      </section>
     </main>
   </body>
 </html>
