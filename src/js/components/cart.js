@@ -41,10 +41,18 @@ export default class Cart {
       const cartData = this.localStorageData();
 
       if (cartData !== null) {
-        const quantity = cartData.products.reduce((a, b) => {
-          const val = a.quantity ? a.quantity + b.quantity : a + b.quantity;
-          return val;
-        });
+        let quantity;
+
+        if (cartData.products.length === 1) {
+          quantity = cartData.products[0].quantity;
+        } else {
+          quantity = cartData.products.reduce((a, b) => {
+            const val = a.quantity ? a.quantity + b.quantity : a + b.quantity;
+
+            return val;
+          });
+        }
+
         cartQuantityElement.innerHTML = quantity.toString();
       } else {
         cartQuantityElement.innerHTML = "0";
