@@ -123,6 +123,33 @@ export default class Shelf {
         {
           breakpoint: 992,
           settings: {
+            slidesToShow: 6,
+            slidesToScroll: 6,
+            arrows: false,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 890,
+          settings: {
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            arrows: false,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 750,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            arrows: false,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 625,
+          settings: {
             slidesToShow: mobileSlidesToShow,
             slidesToScroll: mobileSlidesToShow,
             arrows: false,

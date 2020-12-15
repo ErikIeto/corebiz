@@ -9,7 +9,7 @@ export default class Cart {
     this.localStorageKey = "corebiz@cart";
     this.cartQuantitySelector = ".js-cart-counter";
 
-    this.allowMultipleProducts = false; // Allow multiple products with same id into the cart?
+    this.allowMultipleProducts = true; // Allow multiple products with same id into the cart?
   }
 
   /**
@@ -41,7 +41,19 @@ export default class Cart {
       const cartData = this.localStorageData();
 
       if (cartData !== null) {
-        cartQuantityElement.innerHTML = cartData.products.length;
+        let quantity;
+
+        if (cartData.products.length === 1) {
+          quantity = cartData.products[0].quantity;
+        } else {
+          quantity = cartData.products.reduce((a, b) => {
+            const val = a.quantity ? a.quantity + b.quantity : a + b.quantity;
+
+            return val;
+          });
+        }
+
+        cartQuantityElement.innerHTML = quantity.toString();
       } else {
         cartQuantityElement.innerHTML = "0";
       }
@@ -55,19 +67,30 @@ export default class Cart {
     const cartData = this.localStorageData();
 
     if (cartData !== null) {
-      if (!this.allowMultipleProducts) {
-        const productAlreadyInCart =
-          cartData.products.filter((value) => value === productId).length > 0;
+      const productAlreadyInCart =
+        cartData.products.filter((value) => value.productId === productId)
+          .length > 0;
 
+      if (!this.allowMultipleProducts) {
         if (productAlreadyInCart) return;
       }
 
       let newCartData = cartData.products;
-      newCartData.push(productId);
+
+      if (productAlreadyInCart) {
+        const productInCartIndex = newCartData.findIndex(
+          (v) => v.productId === productId
+        );
+
+        newCartData[productInCartIndex].quantity =
+          newCartData[productInCartIndex].quantity + 1;
+      } else {
+        newCartData.push({ productId, quantity: 1 });
+      }
 
       this.updateCartItems(newCartData);
     } else {
-      const newCartData = [productId];
+      const newCartData = [{ productId, quantity: 1 }];
       this.updateCartItems(newCartData);
     }
   }
