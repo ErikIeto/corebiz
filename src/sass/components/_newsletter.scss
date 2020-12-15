@@ -1,0 +1,55 @@
+.newsletter {
+  width: 100%;
+  background-color: $color-gray-1;
+  padding: 24px 0 36px 0;
+  text-align: center;
+
+  &__title {
+    font-family: $font-secondary;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 22px;
+  }
+
+  &__form {
+    fieldset {
+      border: none;
+      margin-top: 16px;
+    }
+
+    .form {
+      &__input {
+        border: none;
+        border-radius: 5px;
+        background: $color-white;
+        width: 280px;
+        font-family: $font-secondary;
+        padding: 17px 16px;
+        color: $color-gray-3;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
+        margin-right: 8px;
+        outline: none;
+
+        &:focus {
+          border: 1px solid $color-gray-5;
+        }
+      }
+
+      &__submit {
+        border: none;
+        border-radius: 5px;
+        color: $color-white;
+        background: $color-black;
+        font-family: $font-secondary;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 14px;
+        width: 140px;
+        height: 48px;
+        cursor: pointer;
+      }
+    }
+  }
+}
