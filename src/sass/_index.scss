@@ -83,5 +83,17 @@
         }
       }
     }
+
+    .shelf {
+      &__title {
+        padding: 0 13px;
+
+        &::after {
+          width: 32.5px;
+          height: 3.5018px;
+          left: 13px;
+        }
+      }
+    }
   }
 }

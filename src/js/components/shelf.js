@@ -103,6 +103,7 @@ export default class Shelf {
    */
   initSlider() {
     const slidesToShow = 4;
+    const mobileSlidesToShow = 2;
     const slideCount = $(".productCard").length;
 
     /* Clone the cards if we have just a little bit */
@@ -115,9 +116,20 @@ export default class Shelf {
 
     this.getShelfElement().slick({
       slidesToShow: slidesToShow,
-      slidesToScroll: 4,
+      slidesToScroll: slidesToShow,
       arrows: true,
       dots: false,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: mobileSlidesToShow,
+            slidesToScroll: mobileSlidesToShow,
+            arrows: false,
+            dots: true,
+          },
+        },
+      ],
     });
   }
 
@@ -125,11 +137,15 @@ export default class Shelf {
    * Request api products
    */
   async fetchProducts() {
-    const response = await fetch(`${API_URL}/products`, {
-      method: "GET",
-    });
-    const products = await response.json();
-    this.render(products);
+    try {
+      const response = await fetch(`${API_URL}/products`, {
+        method: "GET",
+      });
+      const products = await response.json();
+      this.render(products);
+    } catch (err) {
+      console.warn("Error fetching api products.");
+    }
   }
 
   /**
