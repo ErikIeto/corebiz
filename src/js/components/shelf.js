@@ -50,7 +50,7 @@ export default class Shelf {
       const hasListPrice = product.listPrice !== null;
       const hasInstallments = product.installments.length > 0;
       const starsHTML = this.getStarsHTML(product.stars);
-      console.log(starsHTML);
+
       shelfElement.append(
         `
             <article class="productCard" data-product-id="${product.productId}">

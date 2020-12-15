@@ -5,6 +5,7 @@ import slick from "slick-carousel";
 
 // Components
 import Shelf from "./components/shelf";
+import Cart from "./components/cart";
 
 /**
  * Home page class
@@ -15,7 +16,8 @@ class Home {
    */
   constructor() {
     this.pageLoad();
-    this.productsShelf = new Shelf();
+    this._cart = new Cart();
+    this._productsShelf = new Shelf();
   }
 
   /**
@@ -36,9 +38,10 @@ class Home {
    * On page load method
    */
   pageLoad() {
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", async () => {
       this.initSliders();
-      this.productsShelf.load();
+      await this._productsShelf.load();
+      this._cart.load();
     });
   }
 }
