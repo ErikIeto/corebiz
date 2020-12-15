@@ -9,6 +9,7 @@
     font-weight: bold;
     font-size: 22px;
     line-height: 22px;
+    color: $color-gray-2;
   }
 
   &__form {
@@ -49,6 +50,34 @@
         width: 140px;
         height: 48px;
         cursor: pointer;
+      }
+    }
+  }
+
+  @include max-mobile {
+    text-align: unset;
+    
+    &__title {
+      margin: 0 9px;
+    }
+    
+    &__form {
+
+      .form {
+        &__input {
+          display: block;
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 7px;
+
+          &:first-of-type {
+            margin-bottom: 22px;
+          }
+        }
+
+        &__submit {
+          width: 100%;
+        }
       }
     }
   }
