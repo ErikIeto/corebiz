@@ -1,5 +1,5 @@
 ### Corebiz Frontend Challenge
-#### This project a [Corebiz](https://www.corebiz.ag/ "Corebiz") frontend test.
+#### This project is a [Corebiz](https://www.corebiz.ag/ "Corebiz") frontend test.
 
 ##### Techs
 - HTML5
