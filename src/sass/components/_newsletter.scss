@@ -135,16 +135,23 @@
     }
 
     &__form {
+      flex-direction: column;
+
+      fieldset {
+        width: 100%;
+        margin-right: 0;
+
+        &:first-of-type {
+          margin-bottom: 22px;
+        }
+      }
+
       .form {
         &__input {
           display: block;
           width: 100%;
           margin-right: 0;
           margin-bottom: 7px;
-
-          &:first-of-type {
-            margin-bottom: 22px;
-          }
         }
 
         &__submit {
