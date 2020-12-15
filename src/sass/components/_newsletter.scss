@@ -105,8 +105,10 @@
         &.error {
           border: 1px solid $color-error;
 
-          & + .error-message {
-            display: block;
+          @include min-desktop {
+            & + .error-message {
+              display: block;
+            }
           }
         }
       }
