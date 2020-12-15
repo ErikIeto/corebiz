@@ -103,8 +103,22 @@
   }
 
   @include max-mobile {
-      &__wrapper {
-          flex-direction: column;
+    &__wrapper {
+      flex-direction: column;
+      padding: 0 16px;
+
+      .footer {
+        &__contact {
+          justify-content: center;
+          align-items: center;
+          margin-top: 27px;
+          margin-bottom: 24px;
+        }
+
+        &__labels {
+          justify-content: space-around;
+        }
       }
+    }
   }
 }
