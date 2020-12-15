@@ -1,0 +1,173 @@
+.newsletter {
+  width: 100%;
+  background-color: $color-gray-1;
+  padding: 24px 0 36px 0;
+  text-align: center;
+
+  .hide {
+    display: none;
+  }
+
+  &__success {
+    @include container;
+    display: flex;
+    flex-direction: column;
+
+    .success {
+      &__title {
+        font-family: $font-secondary;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 14px;
+      }
+
+      &__text {
+        font-family: $font-secondary;
+        color: $color-gray-2;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+        margin-bottom: 15px;
+      }
+
+      &__button {
+        background: $color-black;
+        width: 328px;
+        height: 48px;
+        border: none;
+        border-radius: 5px;
+        color: $color-white;
+        font-family: $font-secondary;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 14px;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 22px;
+    color: $color-gray-2;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+
+    fieldset {
+      border: none;
+      display: flex;
+      flex-direction: column;
+      margin-right: 8px;
+      padding: 0;
+      position: relative;
+    }
+
+    .error-message {
+      display: none;
+      font-family: $font-secondary;
+      color: $color-error;
+      margin-top: 8px;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 12px;
+      text-align: left;
+      position: absolute;
+      top: 100%;
+    }
+
+    .form {
+      &__input {
+        position: relative;
+        border: none;
+        border-radius: 5px;
+        background: $color-white;
+        width: 280px;
+        font-family: $font-secondary;
+        padding: 17px 16px;
+        color: $color-gray-3;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
+        outline: none;
+
+        &:focus {
+          border: 1px solid $color-gray-5;
+        }
+
+        &.error {
+          border: 1px solid $color-error;
+
+          @include min-desktop {
+            & + .error-message {
+              display: block;
+            }
+          }
+        }
+      }
+
+      &__submit {
+        border: none;
+        border-radius: 5px;
+        color: $color-white;
+        background: $color-black;
+        font-family: $font-secondary;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 14px;
+        width: 140px;
+        height: 48px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @include max-mobile {
+    text-align: unset;
+
+    &__title {
+      margin: 0 9px;
+    }
+
+    &__success {
+      .success {
+        &__button {
+          width: 100%;
+        }
+      }
+    }
+
+    &__form {
+      flex-direction: column;
+
+      fieldset {
+        width: 100%;
+        margin-right: 0;
+
+        &:first-of-type {
+          margin-bottom: 22px;
+        }
+      }
+
+      .form {
+        &__input {
+          display: block;
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 7px;
+        }
+
+        &__submit {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

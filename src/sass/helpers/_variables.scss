@@ -1,0 +1,24 @@
+// App Sass variables
+
+$font-default: "Nunito", sans-serif;
+$font-secondary: "Lato", $font-default;
+
+$max-width: 1248px;
+
+// Colors
+$color-highlight: #f8475f;
+$color-black: #000;
+$color-white: #fff;
+$color-gray-1: #f2f2f2;
+$color-gray-2: #333333;
+$color-gray-3: #585858;
+$color-gray-4: #7a7a7a;
+$color-gray-5: #bdbdbd;
+$color-gray-6: #c0c0c0;
+$color-gray-7: #e6e8ea;
+
+$color-error: #d7182a;
+
+$z-index: (
+  shelf-arrows: 3,
+) !default;

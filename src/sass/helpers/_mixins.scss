@@ -1,0 +1,13 @@
+@mixin container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @include max-mobile {
+    padding: {
+      left: 7px;
+      right: 7px;
+    }
+    max-width: 100%;
+  }
+}

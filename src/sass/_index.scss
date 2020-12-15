@@ -1,0 +1,100 @@
+/* Index page styles */
+
+.page {
+  &__main-banners {
+    &--mobile {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .slick-list {
+      max-height: 430px;
+    }
+
+    .slick-dots {
+      position: absolute;
+      display: flex;
+      bottom: 37px;
+      width: 100%;
+      justify-content: center;
+
+      li:not(:last-child) {
+        margin-right: 12px;
+      }
+
+      button {
+        border: none;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        background-color: $color-gray-5;
+        font-size: 0;
+        display: block;
+      }
+
+      .slick-active button {
+        background-color: $color-highlight;
+      }
+    }
+  }
+
+  .shelf {
+    margin-top: 25px;
+    padding-bottom: 69px;
+
+    &__title {
+      max-width: $max-width;
+      padding: 0 44px;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 27px;
+      color: $color-black;
+      position: relative;
+      height: 34px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 44px;
+        bottom: 0px;
+        width: 65px;
+        height: 4px;
+        background-color: $color-gray-6;
+      }
+    }
+  }
+
+  @include max-mobile {
+    &__main-banners {
+      display: none;
+
+      &--mobile {
+        display: block;
+      }
+
+      .slick-dots {
+        button {
+          width: 7px;
+          height: 7px;
+        }
+      }
+    }
+
+    .shelf {
+      &__title {
+        padding: 0 13px;
+
+        &::after {
+          width: 32.5px;
+          height: 3.5018px;
+          left: 13px;
+        }
+      }
+    }
+  }
+}

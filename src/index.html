@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Corebiz</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__wrapper">
+        <button class="header__menu header--mobile"></button>
+        <a href="/"
+          ><img class="header__logo" src="assets/corebiz-logo.svg" alt=""
+        /></a>
+
+        <div class="header__search-bar">
+          <input
+            placeholder="O que está procurando?"
+            type="text"
+            class="header__search-bar__input"
+            name="search"
+            id="search-bar"
+          />
+        </div>
+
+        <div class="header__links">
+          <a class="header__links__account" href="#">Minha Conta</a>
+          <a class="header__links__cart" href="#"></a>
+          <span class="header__links__cart--counter js-cart-counter"></span>
+        </div>
+      </div>
+      <div class="header__search-bar header__search-bar--mobile">
+        <input
+          placeholder="O que está procurando?"
+          type="text"
+          class="header__search-bar__input"
+          name="search"
+          id="mobile-search-bar"
+        />
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page__main-banners js-main-banners">
+        <div class="banner">
+          <a href="#">
+            <img src="assets/main_banner-01.png" alt="Banner 01" />
+          </a>
+        </div>
+        <div class="banner">
+          <a href="#">
+            <img src="assets/main_banner-01.png" alt="Banner 02" />
+          </a>
+        </div>
+        <div class="banner">
+          <a href="#">
+            <img src="assets/main_banner-01.png" alt="Banner 02" />
+          </a>
+        </div>
+        <div class="banner">
+          <a href="#">
+            <img src="assets/main_banner-01.png" alt="Banner 02" />
+          </a>
+        </div>
+      </section>
+
+      <section
+        class="page__main-banners page__main-banners--mobile js-main-banners"
+      >
+        <div class="banner">
+          <a href="#">
+            <img src="assets/mobile_main-banner-01.png" alt="Banner 01" />
+          </a>
+        </div>
+        <div class="banner">
+          <a href="#">
+            <img src="assets/mobile_main-banner-01.png" alt="Banner 02" />
+          </a>
+        </div>
+        <div class="banner">
+          <a href="#">
+            <img src="assets/mobile_main-banner-01.png" alt="Banner 02" />
+          </a>
+        </div>
+        <div class="banner">
+          <a href="#">
+            <img src="assets/mobile_main-banner-01.png" alt="Banner 02" />
+          </a>
+        </div>
+      </section>
+
+      <section class="shelf container">
+        <h2 class="shelf__title">Mais Vendidos</h2>
+        <div class="products-shelf js-products-shelf"></div>
+      </section>
+
+      <section class="newsletter js-newsletter-section">
+        <div class="container js-newsletter-section--form">
+          <h2 class="newsletter__title">
+            Participe de nossas news com promoções e novidades!
+          </h2>
+
+          <form class="newsletter__form js-newsletter-form" method="POST">
+            <fieldset>
+              <input
+                class="form__input"
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Digite seu nome"
+                required
+              />
+              <span class="error-message">Preencha seu nome completo</span>
+            </fieldset>
+            <fieldset>
+              <input
+                class="form__input"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Digite seu email"
+                required
+              />
+              <span class="error-message">Preencha com um e-mail válido</span>
+            </fieldset>
+
+            <button class="form__submit">Eu quero!</button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <div class="footer__column">
+            <h3 class="footer__column__title">Localização</h3>
+
+            <span>Avenida Andrômeda, 2000. Bloco 6 e 8</span>
+            <span>Alphavile SP</span>
+            <span>brasil@corebiz.ag</span>
+            <span>+55 11 3090 1039</span>
+          </div>
+
+          <div class="footer__contact footer__column">
+            <a href="#">
+              <i class="footer__contact--icon-mail"></i>
+              Entre em contato
+            </a>
+            <a href="#"
+              ><i class="footer__contact--icon-headset"></i>Fale com o nosso<br />
+              consultor online</a
+            >
+          </div>
+
+          <div class="footer__labels footer__column">
+            <div class="footer__labels__label">
+              <span>Created by</span>
+              <img src="assets/label-corebiz.svg" alt="Corebiz">
+            </div>
+            <div class="footer__labels__label">
+              <span>Powered by</span>
+              <img src="assets/label-vtex.svg" alt="VTEX">
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
